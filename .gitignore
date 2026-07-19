@@ -1,0 +1,49 @@
+# .NET build output
+**/bin/
+**/obj/
+artifacts/
+publish/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code local settings
+.vscode/
+
+# Test results and coverage
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# NuGet generated packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Logs
+logs/
+*.log
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# Certificates and private keys
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Operating-system files
+.DS_Store
+Thumbs.db
