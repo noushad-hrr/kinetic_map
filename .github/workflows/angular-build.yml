@@ -3,10 +3,10 @@ name: Angular Frontend Build
 on:
   push:
     branches:
-      - frontend
+      - frontend_dev
   pull_request:
     branches:
-      - frontend
+      - frontend_dev
 
 jobs:
   build:
