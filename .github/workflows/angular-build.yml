@@ -1,0 +1,40 @@
+name: Angular Frontend Build
+
+on:
+  push:
+    branches:
+      - frontend
+  pull_request:
+    branches:
+      - frontend
+
+jobs:
+  build:
+    name: Build Angular Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout frontend code
+        uses: actions/checkout@v6
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.15.0"
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Configure npm
+        run: npm install --global npm@11.13.0
+
+      - name: Display versions
+        run: |
+          node --version
+          npm --version
+          npx ng version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular application
+        run: npm run build
